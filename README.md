@@ -33,13 +33,31 @@
 - 일부 데이터 허깅페이스 파이프라인 사용하여 `오토라벨링` 후 `정교화` 작업 수행
 - `클래스 불균형`이 심한 데이터셋 > `데이터 증강`을 통한 클래스 불균형 해소
 
-# 👀 git clone 후 절차
+
+# 💁‍♀️ 페이지 
+## home 
+
+
+## data
+
+## info
+
+## code 
+
+## input
+
+## predict 
+
+
+
+# 사용 방법
 (1) 모델 파일 다운로드
 - https://drive.google.com/drive/folders/10LA8mzUOMkcFcoCImyNlL_3_8jxQjTrv?usp=sharing 공유 드라이브 이동하여 DT5_beomi_kcbert_base_model.h5 모델 파일 다운로드
 - 다운로드한 모델 파일을 장고 프로젝트 내부로 이동 
 - 장고 base project인 Diary의 settings.py로 이동
 
 (2) Diary > settings.py 이동 
+- settings.py 상단의 related bert 
 - settings.py의 맨 하단의 각주 처리된 코드 > 각주 해제 
 ```python
 # BEST_MODEL_NAME = 'C:\django\DL_senti_classification\DT5_beomi_kcbert_base_model.h5'
@@ -57,10 +75,31 @@
 ```
 
 - 각주 해제 후 다운로드하여 이동시킨 모델의 절대 경로를 BERT_MODEL_NAME 상수 변수에 재할당
+- labels변수에 labels.csv 파일의 절대경로 재할당
+    - encoding 용도
 
 (3) 장고 프로젝트의 하위 앱 model >  views.py 이동
 - 각주 처리된 convert_data , bertPredict 함수 각주 해제
-- predict 함수형뷰 코드로 이동하여 각주 처리된 부분의 코드 각주해제
-- runserver 용도 각주 밑 코드 context = {'input_submit' : input_submit} 삭제 
+- 맨 하단의 predict 함수형뷰 코드로 이동하여 각주 처리된 부분의 코드 각주해제
+- runserver 용도 코드 각주 밑 코드 context = {'input_submit' : input_submit} 삭제 
+
+
+```python
+def predict(request):
+    start = time.time()
+    if request.method == 'POST' :
+        form = request.POST
+        input_submit = form['input_diary']
+        print("input_submit > ", input_submit, len(input_submit))
+        pred = bertPredict(input_submit)
+        context = {'input_submit' : pred}
+        
+        # runserver 용도 코드 
+        # context = {'input_submit' : input_submit} >> ******* 삭제 
+
+    end = time.time()
+    print("총 소요시간 >> ", end-start )
+    return render(request, 'model/predict.html', context)
+```
 
 (4) runserver 실행
