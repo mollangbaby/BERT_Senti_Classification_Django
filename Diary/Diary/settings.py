@@ -15,12 +15,12 @@ import os, json
 from django.core.exceptions import ImproperlyConfigured
 
 # related BERT Model
-# from transformers import BertTokenizer, TFBertForSequenceClassification
-# import tensorflow as tf
-# import numpy as np 
-# import pandas as pd 
-# from sklearn.preprocessing import LabelEncoder
-# import tensorflow_addons as tfa
+from transformers import BertTokenizer, TFBertForSequenceClassification
+import tensorflow as tf
+import numpy as np 
+import pandas as pd 
+from sklearn.preprocessing import LabelEncoder
+import tensorflow_addons as tfa
 
 
 
@@ -43,8 +43,8 @@ def get_secret(setting):
     except KeyError:
         error_msg = "Set the {} environment variable".format(setting)
         raise ImproperlyConfigured(error_msg)
-# SECRET_KEY = get_secret("SECRET_KEY")
-SECRET_KEY = 'django-insecure-d%t-tl_3ex4gtn5#w^ui=jlj=_i4$&jhq8rxhcfc0i6nw#l93h'
+
+SECRET_KEY = get_secret("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -152,7 +152,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # # 최고 성능의 모델 파일을 저장할 이름과 경로 설정
-# BEST_MODEL_NAME = 'C:\django\DL_senti_classification\DT5_beomi_kcbert_base_model.h5'
+# BEST_MODEL_NAME = 'C:\django\BERT_Senti_Classification_Django\DT5_beomi_kcbert_base_model.h5'
 # # 최고 성능의 모델 불러오기
 # MODEL = tf.keras.models.load_model(BEST_MODEL_NAME,
 #                                                   custom_objects = {'TFBertForSequenceClassification': TFBertForSequenceClassification})
@@ -162,5 +162,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # print(TOKENIZER)
 
 # ENCODER  = LabelEncoder()
-# labels = pd.read_csv(r"C:\django\DL_senti_classification\labels.csv")
+# labels = pd.read_csv(r"C:\django\BERT_Senti_Classification_Django\Diary\labels.csv")
 # ENCODER.fit_transform(np.array(labels['감정'])) 

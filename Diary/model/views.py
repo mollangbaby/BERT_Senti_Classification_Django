@@ -38,16 +38,17 @@ def code(request):
 def input(request):
     return render(request, 'model/input.html', {'data' : "log your day"})
 
+
 def predict(request):
     start = time.time()
     if request.method == 'POST' :
         form = request.POST
         input_submit = form['input_diary']
-        # print("input_submit > ", input_submit, len(input_submit))
+        print("input_submit > ", input_submit, len(input_submit))
         # pred = bertPredict(input_submit)
         # context = {'input_submit' : pred}
         
-        # runserver용도
+        # runserver 용도 코드 
         context = {'input_submit' : input_submit}
 
     end = time.time()
