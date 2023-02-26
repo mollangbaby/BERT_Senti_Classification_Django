@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contents %}
+<!-- Portfolio Grid -->
+<section class="page-section bg-light" id="portfolio">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">한국어 문장 감정 분석</h2>
+            <h3 class="section-subheading text-muted"> with Beomi/KcBERT-base</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Portfolio item 1-->
+                <div class="portfolio-item" style="text-align: center;">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="{% url 'model:info' %}">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <a href="{% url 'model:info' %}">
+                            <img class="img-fluid" src="{% static 'assets/img/logo/model.png' %}" alt="..."  style="height: 240px ; width: auto; "/>
+                        </a>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Model</div>
+                        <div class="portfolio-caption-subheading text-muted">with BERT</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Portfolio item 2-->
+                <div class="portfolio-item" style="text-align: center;">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="{% url 'model:data' %}">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <a href="{% url 'model:data' %}">
+                        <img class="img-fluid" src="{% static 'assets/img/logo/data.png' %}"  alt="..."  style="height: 240px ; width: auto;"  />
+                    </a>
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Data</div>
+                        <div class="portfolio-caption-subheading text-muted">Preprocessing & Dataset Design</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6 mb-4">
+                <!-- Portfolio item 3-->
+                <div class="portfolio-item" style="text-align: center;">
+                    <a class="portfolio-link" data-bs-toggle="modal" href="{% url 'model:code' %}">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <a href="{% url 'model:code' %}">
+                            <img class="img-fluid" src="{% static 'assets/img/logo/python.png' %}" alt="..."  style="height: 240px ; width: auto;" />
+                        </a>
+                        
+                    </a>
+                    <div class="portfolio-caption">
+                        <div class="portfolio-caption-heading">Code</div>
+                        <div class="portfolio-caption-subheading text-muted">python 3.8</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock contents %}

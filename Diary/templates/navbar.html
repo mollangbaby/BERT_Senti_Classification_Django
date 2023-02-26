@@ -1,0 +1,16 @@
+{% load static %}
+<nav class="navbar sticky-top navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a href="{% url 'home' %}" class = "navbar-brand" style="color:cadetblue;"> Sentiment classification </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            go test
+            <i class="fas fa-bars ms-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link" style="color:cadetblue;" href="{% url 'model:input' %}">Diary</a></li>
+                <li class="nav-item"><a class="nav-link" style="color:cadetblue;" href="https://github.com/mollangbaby/BERT_Senti_Classification_Django">Git</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

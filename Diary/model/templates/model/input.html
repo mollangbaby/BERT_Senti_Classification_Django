@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contents %}
+<br>
+<br>
+<br>
+
+<div class="container">
+    <div class="text-center">
+        <div>
+            <h3>{{data}}</h3>
+        </div>
+        <hr>
+        <p><strong>감정을 분석하고 싶은 일기 혹은 문장을 입력하세요.</strong></p>
+        <p style="color:gray;">너무 짧은 문장 혹은 구체적인 감정이 담겨있지 않은 경우 정확도가 떨어질 가능성이 높습니다.</p>
+        <form method = 'post' action= "{% url 'model:predict' %}">
+            {% csrf_token %}
+            <div>
+            <input type="text" name = 'input_diary'  placeholder="input .... "> <input type="submit" value = '완료'>
+            <div/>
+    </div>
+</div>
+{% endblock contents %}
