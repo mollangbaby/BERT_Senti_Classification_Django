@@ -35,19 +35,23 @@
 
 
 # 💁‍♀️ 페이지 
-## home 
+### home.html 
+![home](https://user-images.githubusercontent.com/119670827/221406899-dd8197e3-2952-4b55-933a-61980d4812ca.png)
 
+### data.html
+![data](https://user-images.githubusercontent.com/119670827/221406913-28ab8326-3e90-4512-b43a-575543c22790.png)
 
-## data
+### info.html
+![info](https://user-images.githubusercontent.com/119670827/221406906-c1ea1320-9eaf-4000-9611-f996982f5160.png)
 
-## info
+### code.html 
+![code2](https://user-images.githubusercontent.com/119670827/221406917-37b96ee5-06fc-43c0-b44b-8181c940c1cd.png)
 
-## code 
+### input.html 
+![input](https://user-images.githubusercontent.com/119670827/221406924-21c91446-4177-4c8b-a840-3fbec55c42b0.png)
 
-## input
-
-## predict 
-
+### predict.html 
+![predict](https://user-images.githubusercontent.com/119670827/221406928-c59b6685-95d3-4f3b-8c0f-041eb2a7fca0.png)
 
 
 # 사용 방법
