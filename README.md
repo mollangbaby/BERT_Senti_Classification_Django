@@ -61,7 +61,7 @@
 - 장고 base project인 Diary의 settings.py로 이동
 
 (2) Diary > settings.py 이동 
-- settings.py 상단의 related bert 
+- settings.py 상단의 related bert import
 - settings.py의 맨 하단의 각주 처리된 코드 > 각주 해제 
 ```python
 # BEST_MODEL_NAME = 'C:\django\DL_senti_classification\DT5_beomi_kcbert_base_model.h5'
