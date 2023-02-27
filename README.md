@@ -10,7 +10,7 @@
 
 
 모델
-- Beomi-KcBert-base 모델 (5개의 Bert모델 중 가장 좋은 성능 기록)
+- Beomi-KcBert-base 모델 (5개의 Bert모델 중 짧은 문장에서 가장 좋은 성능 기록)
 - tensorflow에서 학습(huggingface의 tfbertclassification을 사용하고자)
 
 
